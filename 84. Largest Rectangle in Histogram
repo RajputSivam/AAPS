@@ -1,1 +1,83 @@
+84. Largest Rectangle in Histogram
 
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+class Solution {
+  public int largestRectangleArea(int[] heights) {   // function to calculate largest rectangle
+
+    int max = 0;   // variable to store maximum area
+
+    for (int i = 0; i < heights.length; i++)   // outer loop: starting index
+    {
+        int minH = Integer.MAX_VALUE;   // initialize minimum height
+
+        for (int j = 1; j < heights.length; i++)   //  inner loop (mistake: j start & increment)
+        {
+            minH = Math.min(minH, heights[j]);   // update minimum height in range
+
+            max = Math.max(max, (j - i + 1) * minH);   // calculate area and update max
+        }
+    }
+
+    return max;   // return maximum area
+    }
+}
+
+
+import java.util.*; // Import required for Stack and Arrays
+
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+
+        int n = heights.length; // store size of array
+
+        int[] nsei = new int[n]; // Next Smaller Element Index (right side)
+        int[] psei = new int[n]; // Previous Smaller Element Index (left side)
+
+        Arrays.fill(nsei, n);   // default: no smaller element on right → set to n
+        Arrays.fill(psei, -1);  // default: no smaller element on left → set to -1
+
+        Stack<Integer> st = new Stack<>(); // stack to store indices
+
+        // 🔹 Step 1: Find Next Smaller Element (NSE)
+        for (int i = 0; i < n; i++) {
+
+            // while stack not empty AND current height is smaller than stack top height
+            while (!st.isEmpty() && heights[i] < heights[st.peek()]) {
+
+                int idx = st.pop();   // pop index
+                nsei[idx] = i;        // update next smaller index for popped element
+            }
+
+            st.push(i); // push current index into stack
+        }
+
+        st.clear(); // clear stack to reuse it
+
+        // 🔹 Step 2: Find Previous Smaller Element (PSE)
+        for (int i = n - 1; i >= 0; i--) {
+
+            // while stack not empty AND current height is smaller
+            while (!st.isEmpty() && heights[i] < heights[st.peek()]) {
+
+                int idx = st.pop();   // pop index
+                psei[idx] = i;        // update previous smaller index
+            }
+
+            st.push(i); // push current index
+        }
+
+        int max = 0; // variable to store maximum area
+
+        // 🔹 Step 3: Calculate max area
+        for (int i = 0; i < n; i++) {
+
+            int width = nsei[i] - psei[i] - 1; // width of rectangle
+            int area = heights[i] * width;     // area using current height
+
+            max = Math.max(max, area); // update max area
+        }
+
+        return max; // return final answer
+    }
+}
