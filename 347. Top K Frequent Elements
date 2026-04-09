@@ -1,0 +1,47 @@
+347. Top K Frequent Elements
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+
+Output: [1,2]
+
+
+class Solution {
+    static class Pair
+    {
+        int k;
+        int v;
+        public Pair(int k,int v)
+        {
+            this.k=k;
+            this.v=v;
+        }
+    }
+    public int[] topKFrequent(int[] nums, int k) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            hm.put(  nums[i],hm.getOrDefault(nums[i],0)+1);
+        }
+        PriorityQueue<Pair> pq=new PriorityQueue<>((a,b)->Integer.compare(b.v,a.v));
+        for(int i:hm.keySet())
+        {
+            pq.offer(new Pair(i,hm.get(i) ) );
+        }
+        
+        int [] ar=new int[k];
+        int i=0;
+        while(k-->0)
+        {
+            Pair cur=pq.poll();
+            int r=cur.k;
+            ar[i++]=r;
+        }
+        return ar;
+    }
+}
