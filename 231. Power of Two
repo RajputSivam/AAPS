@@ -26,10 +26,6 @@ class Solution {
     }
 }
 
-| Type             | Value        |
-| ---------------- | ------------ |
-| Time Complexity  | **O(log n)** |
-| Space Complexity | **O(1)**     |
 
 int power = 1;
 
@@ -40,8 +36,9 @@ while (power <= n) {
     power = power * 2;
 }
 
-| Type  | Value        |
-| ----- | ------------ |
-| Time  | **O(log n)** |
-| Space | **O(1)**     |
+| Approach      | Time Complexity | Space | Same or Different? |
+| ------------- | --------------- | ----- | ------------------ |
+| Brute Force   | O(log n)        | O(1)  | ❌                  |
+| Optimal (Bit) | O(1)            | O(1)  | ❌                  |
+
 
