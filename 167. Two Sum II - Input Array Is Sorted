@@ -43,4 +43,33 @@ class Solution {
         
     }
 }
+| Complexity Type  | Value    |
+| ---------------- | -------- |
+| Time Complexity  | **O(n)** |
+| Space Complexity | **O(1)** |
+
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                
+                if (numbers[i] + numbers[j] == target) {
+                    return new int[]{i + 1, j + 1};
+                }
+                
+            }
+        }
+        
+        return new int[]{-1, -1};
+    }
+}
+
+| Approach      | Time  | Space | Idea             |
+| ------------- | ----- | ----- | ---------------- |
+| Brute Force   | O(n²) | O(1)  | Check all pairs  |
+| Two Pointer ✅ | O(n)  | O(1)  | Use sorted array |
+
+
+
 
