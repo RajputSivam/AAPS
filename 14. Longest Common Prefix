@@ -36,3 +36,23 @@ class Solution {
         return sb.toString();
     }
 }
+
+Time Complexity (TC)
+n = number of strings (strs.length)
+m = length of the shortest string
+
+Outer Loop
+for(int i=1;i<strs.length;i++)
+Runs (n - 1) times → where n = number of strings
+
+Function cm(s1, s2)
+for(int i=0;i<n;i++)
+Compares characters one by one
+Runs up to min(length of s1, length of s2)
+Total:
+
+O(n * m)
+
+💾 Space Complexity (SC)
+Extra Space Used:
+StringBuilder sb → stores prefix → O(m)
