@@ -51,3 +51,41 @@ O(n + m)
 Only 2 pointers used
 👉
 O(1)
+
+
+Brute Force Code
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        
+        ListNode a = headA;
+
+        while (a != null) {
+            ListNode b = headB;
+
+            while (b != null) {
+                if (a == b) {   // compare reference, not value
+                    return a;
+                }
+                b = b.next;
+            }
+
+            a = a.next;
+        }
+
+        return null; // no intersection
+    }
+}
+Time Complexity
+Outer loop → n
+Inner loop → m
+
+👉 Total:
+
+O(n * m)
+
+💾 Space Complexity
+No extra space used
+
+👉
+
+O(1)
