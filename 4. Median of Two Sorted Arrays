@@ -37,3 +37,15 @@ class Solution {
         }    
     }
 }
+
+
+⏱ Time Complexity
+Copying arrays → O(n + m)
+Sorting → O((n + m) log(n + m)) ❗ (dominant part)
+Finding median → O(1)
+
+👉 Overall:
+
+O((n + m) log(n + m))
+💾 Space Complexity
+You create a new array res → O(n + m)
