@@ -78,3 +78,9 @@ class Solution {
         return dummy.next;
     }
 }
+
+
+| Type  | Value                     |
+| ----- | ------------------------- |
+| Time  | **O((n + m) log(n + m))** |
+| Space | **O(n + m)**              |
