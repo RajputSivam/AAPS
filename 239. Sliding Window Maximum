@@ -1,6 +1,7 @@
 239. Sliding Window Maximum
 
-You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right.
+You can only see the k numbers in the window. Each time the sliding window moves right by one position.
 
 Return the max sliding window.
 
@@ -67,3 +68,36 @@ class Solution
         return res; 
     }
 }
+
+| Type             | Value                       |
+| ---------------- | --------------------------- |
+| Time Complexity  | **O(n)** ✅                  |
+| Space Complexity | **O(n)** (including result) |
+
+
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        int[] res = new int[n - k + 1];
+        int idx = 0;
+
+        for (int i = 0; i <= n - k; i++) {
+            int max = nums[i];
+
+            for (int j = i; j < i + k; j++) {
+                if (nums[j] > max) {
+                    max = nums[j];
+                }
+            }
+
+            res[idx++] = max;
+        }
+
+        return res;
+    }
+}
+
+| Approach          | Time   | Space | Idea                    |
+| ----------------- | ------ | ----- | ----------------------- |
+| Brute Force       | O(n·k) | O(n)  | Check each window       |
+| Optimal (Deque) ✅ | O(n)   | O(k)  | Remove useless elements |
