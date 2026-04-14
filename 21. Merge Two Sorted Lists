@@ -42,3 +42,39 @@ class Solution {
         }
     }
 }
+| Complexity Type  | Value        |
+| ---------------- | ------------ |
+| Time Complexity  | **O(n + m)** |
+| Space Complexity | **O(n + m)** |
+
+class Solution {
+    public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
+        
+        ArrayList<Integer> list = new ArrayList<>();
+
+        // Step 1: Store elements
+        while (head1 != null) {
+            list.add(head1.val);
+            head1 = head1.next;
+        }
+
+        while (head2 != null) {
+            list.add(head2.val);
+            head2 = head2.next;
+        }
+
+        // Step 2: Sort
+        Collections.sort(list);
+
+        // Step 3: Create new linked list
+        ListNode dummy = new ListNode(-1);
+        ListNode temp = dummy;
+
+        for (int val : list) {
+            temp.next = new ListNode(val);
+            temp = temp.next;
+        }
+
+        return dummy.next;
+    }
+}
