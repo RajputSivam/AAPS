@@ -25,3 +25,23 @@ class Solution {
         return true;
     }
 }
+
+| Type             | Value        |
+| ---------------- | ------------ |
+| Time Complexity  | **O(log n)** |
+| Space Complexity | **O(1)**     |
+
+int power = 1;
+
+while (power <= n) {
+    if (power == n) {
+        return true;
+    }
+    power = power * 2;
+}
+
+| Type  | Value        |
+| ----- | ------------ |
+| Time  | **O(log n)** |
+| Space | **O(1)**     |
+
