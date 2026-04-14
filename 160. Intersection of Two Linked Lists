@@ -38,3 +38,16 @@ public class Solution {
 
     }
 }
+⏱ Time Complexity
+
+Each pointer travels at most:
+
+Length of A + Length of B
+
+👉 So:
+
+O(n + m)
+💾 Space Complexity
+Only 2 pointers used
+👉
+O(1)
