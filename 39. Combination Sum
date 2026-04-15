@@ -13,6 +13,51 @@ Example 1:
 Input: candidates = [2,3,6,7], target = 7
 Output: [[2,2,3],[7]]
 
+//Optimal Approach
+
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        
+        Arrays.sort(candidates); // 🔥 optimization
+        backtrack(candidates, target, 0, new ArrayList<>(), res);
+        
+        return res;
+    }
+
+    public void backtrack(int[] arr, int target, int idx, List<Integer> temp, List<List<Integer>> res) {
+        
+        // ✅ Found valid combination
+        if (target == 0) {
+            res.add(new ArrayList<>(temp));
+            return;
+        }
+
+        for (int i = idx; i < arr.length; i++) {
+            
+            // 🔥 Pruning (important optimization)
+            if (arr[i] > target) break;
+
+            temp.add(arr[i]);
+            
+            // Stay at same index (reuse allowed)
+            backtrack(arr, target - arr[i], i, temp, res);
+            
+            // Backtrack
+            temp.remove(temp.size() - 1);
+        }
+    }
+}
+
+| **Type**                           | **Complexity**           |
+| ---------------------------------- | ------------------------ |
+| **Time Complexity**                | **O(n log n + n^(T/M))** |
+| **Auxiliary Space**                | **O(T/M) ≈ O(target)**   |
+| **Total Space (including result)** | **O(n^(T/M) × k)**       |
+
+
+
+
 
 class Solution
 {
@@ -44,3 +89,9 @@ class Solution
         help(candidate,target, ar,res,idx+1 );
     }
 }
+Time Complexity:
+👉 O(2^(target / minElement)) ≈ O(2^target)
+Space Complexity:
+👉 O(target) (excluding result)
+
+
