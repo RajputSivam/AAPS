@@ -31,3 +31,38 @@ class Solution {
         return res;
     }
 }
+
+❌ Brute Force Code (your logic explained)
+class Solution {
+    public int[] nextGreaterElements(int[] nums)
+    {
+        int n = nums.length;
+        int[] res = new int[n];
+
+        // check for every element
+        for (int i = 0; i < n; i++)
+        {
+            res[i] = -1; // default if no greater element found
+
+            // traverse circularly (2*n range)
+            for (int j = 1; j < 2 * n; j++)
+            {
+                int idx = (i + j) % n;
+
+                // if next greater element found
+                if (nums[i] < nums[idx])
+                {
+                    res[i] = nums[idx];
+                    break;
+                }
+            }
+        }
+
+        return res;
+    }
+}
+
+| Approach                    | Idea                                                          | Time Complexity (TC) | Space Complexity (SC)       | Explanation                               |
+| --------------------------- | ------------------------------------------------------------- | -------------------- | --------------------------- | ----------------------------------------- |
+| ❌ Brute Force               | For each index, check next 2n elements using circular loop    | **O(n²)**            | **O(1)** (excluding output) | Each element scans almost full array      |
+| ✅ Optimal (Monotonic Stack) | Use stack to store decreasing elements while traversing twice | **O(n)**             | **O(n)**                    | Each element pushed & popped at most once |
