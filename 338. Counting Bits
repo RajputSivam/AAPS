@@ -13,6 +13,22 @@ Explanation:
 1 --> 1
 2 --> 10
 
+|
+Optimized Code
+class Solution {
+    public int[] countBits(int n) {
+        int[] ar = new int[n+1];
+
+        for(int i = 1; i <= n; i++) {
+            ar[i] = ar[i >> 1] + (i & 1);
+        }
+
+        return ar;
+    }
+}
+
+//Brute  Force
+
 class Solution {
     public int[] countBits(int n) {
         int []ar=new int[n+1];
@@ -38,3 +54,9 @@ class Solution {
     }
 
 }
+
+| Complexity | Value    |
+| ---------- | -------- |
+| Time       | **O(n)** |
+| Space      | **O(n)** |
+
