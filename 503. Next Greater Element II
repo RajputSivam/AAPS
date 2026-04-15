@@ -32,35 +32,40 @@ class Solution {
     }
 }
 
-❌ Brute Force Code (your logic explained)
+
+Optimal Approach
+import java.util.*;
+
 class Solution {
-    public int[] nextGreaterElements(int[] nums)
-    {
+    public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int[] res = new int[n];
+        
+        // initialize result with -1
+        Arrays.fill(res, -1);
 
-        // check for every element
-        for (int i = 0; i < n; i++)
-        {
-            res[i] = -1; // default if no greater element found
+        Stack<Integer> st = new Stack<>(); // store indices
 
-            // traverse circularly (2*n range)
-            for (int j = 1; j < 2 * n; j++)
-            {
-                int idx = (i + j) % n;
+        // traverse twice for circular effect
+        for (int i = 0; i < 2 * n; i++) {
 
-                // if next greater element found
-                if (nums[i] < nums[idx])
-                {
-                    res[i] = nums[idx];
-                    break;
-                }
+            int idx = i % n;
+
+            // resolve next greater for stack elements
+            while (!st.isEmpty() && nums[st.peek()] < nums[idx]) {
+                res[st.pop()] = nums[idx];
+            }
+
+            // only push in first pass
+            if (i < n) {
+                st.push(idx);
             }
         }
 
         return res;
     }
 }
+
 
 | Approach                    | Idea                                                          | Time Complexity (TC) | Space Complexity (SC)       | Explanation                               |
 | --------------------------- | ------------------------------------------------------------- | -------------------- | --------------------------- | ----------------------------------------- |
