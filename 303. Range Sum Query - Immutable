@@ -1,16 +1,6 @@
 
-Code
-
-
-Testcase
-Test Result
-Test Result
 303. Range Sum Query - Immutable
-Solved
-Easy
-Topics
-premium lock icon
-Companies
+
 Given an integer array nums, handle multiple queries of the following type:
 
 Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
@@ -46,6 +36,30 @@ class NumArray {
         return left==0? pr[right] : pr[right]-pr[left-1];
     }
 }
+❌ Brute Force Code
+class NumArray {
+    int[] nums;
+
+    public NumArray(int[] nums) {
+        this.nums = nums;
+    }
+
+    public int sumRange(int left, int right) {
+        int sum = 0;
+        for(int i = left; i <= right; i++) {
+            sum += nums[i];
+        }
+        return sum;
+    }
+}
+
+| Approach    | Query Time | Preprocessing | Space |
+| ----------- | ---------- | ------------- | ----- |
+| Brute Force | O(n)       | O(1)          | O(1)  |
+| Prefix Sum  | O(1)       | O(n)          | O(n)  |
+
+
+
 
 /**
  * Your NumArray object will be instantiated and called as such:
