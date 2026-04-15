@@ -45,3 +45,48 @@ class Solution {
         return ar;
     }
 }
+
+
+🧾 Brute Force Code
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        int n = nums.length;
+
+        int[][] freq = new int[n][2]; // [element, frequency]
+        int idx = 0;
+
+        for(int i = 0; i < n; i++) {
+            boolean found = false;
+
+            for(int j = 0; j < idx; j++) {
+                if(freq[j][0] == nums[i]) {
+                    freq[j][1]++;
+                    found = true;
+                    break;
+                }
+            }
+
+            if(!found) {
+                freq[idx][0] = nums[i];
+                freq[idx][1] = 1;
+                idx++;
+            }
+        }
+
+        // sort based on frequency
+        Arrays.sort(freq, 0, idx, (a,b) -> b[1] - a[1]);
+
+        int[] res = new int[k];
+        for(int i = 0; i < k; i++) {
+            res[i] = freq[i][0];
+        }
+
+        return res;
+    }
+}
+
+| Approach    | Time Complexity | Space |
+| ----------- | --------------- | ----- |
+| Brute Force | O(n²)           | O(n)  |
+| Your (Heap) | O(n log n)      | O(n)  |
+
