@@ -75,3 +75,12 @@ class Solution {
         
     }
 }
+
+
+| **Component**     | **Operation**  | **Time Complexity (TC)** | **Space Complexity (SC)** |
+| ----------------- | -------------- | ------------------------ | ------------------------- |
+| Initialize arrays | `lm[]`, `rm[]` | **O(1)**                 | **O(n)**                  |
+| Build left max    | Loop (0 → n-1) | **O(n)**                 | —                         |
+| Build right max   | Loop (n-1 → 0) | **O(n)**                 | —                         |
+| Water calculation | Final loop     | **O(n)**                 | —                         |
+| **Total**         | —              | **O(n)**                 | **O(n)**                  |
