@@ -55,8 +55,8 @@ class Solution {
 
 }
 
-| Complexity | Value    |
-| ---------- | -------- |
-| Time       | **O(n)** |
-| Space      | **O(n)** |
+| Approach     | Time Complexity | Space |
+| ------------ | --------------- | ----- |
+| Your (Brute) | O(n log n)      | O(n)  |
+| Optimal (DP) | O(n)            | O(n)  |
 
