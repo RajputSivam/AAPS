@@ -81,3 +81,10 @@ class Solution {
         return max; // return final answer
     }
 }
+
+
+| Approach          | Time Complexity | Space Complexity |
+| ----------------- | --------------- | ---------------- |
+| ❌ Brute Force     | O(n³)           | O(1)             |
+| ✅ Optimal (Stack) | O(n)            | O(n)             |
+
