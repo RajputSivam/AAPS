@@ -1,0 +1,50 @@
+84. Largest Rectangle in Histogram  Optimal (Stack) | O(n)            | O(n)
+78. Subsets   Optimal     | Backtracking | O(n·2ⁿ) | O(n) recursion
+724. Find Pivot Index  | Optimal (Prefix Sum) | *O(n)*        | *O(1)*
+503. Next Greater Element II   | ❌ Brute Force            | *O(n²)*            | *O(1)* (excluding output)
+5. Longest Palindromic Substring  | *Brute Force*                    | Check all substrings + palindrome check | *O(n³)*            | *O(1)*
+496. Next Greater Element I  | Optimized Stack | O(m + n)        | O(m + n)
+42. Trapping Rain Water brute force  *O(n)*                 | *O(n)*
+4. Median of Two Sorted Arrays  ✅ Final Answer
+Time Complexity: 👉 O((n + m) log(n + m))
+Space Complexity: 👉 O(n + m)
+39. Combination Sum
+👉 O(2^(target / minElement)) ≈ O(2^target)
+Space Complexity:
+👉 O(target) (excluding result)
+347. Top K Frequent Elements    Your (Heap) | O(n log n)      | O(n)
+338. Counting Bits   Your (Brute) | O(n log n)      | O👎
+303. Range Sum Query - Immutable  Optmal . Prefix Sum       | O(n)          | O(n)
+239. Sliding Window Maximum  
+| Type             | Value                       |
+| ---------------- | --------------------------- |
+| Time Complexity  | *O(n)* ✅                  |
+| Space Complexity | *O(n)* (including result) |
+239. Sliding Window Maximum   Optimal Appraoch
+| Type             | Value                       |
+| ---------------- | --------------------------- |
+| Time Complexity  | *O(n)* ✅                  |
+| Space Complexity | *O(n)* (including result) |
+231. Power of Two   Optimal (Bit) | O(1)            | O(1)
+| Complexity Type  | Value        |  21. Merge Two Sorted Lists Optimal
+| ---------------- | ------------ |
+| Time Complexity  | *O(n + m)* |
+| Space Complexity | *O(n + m)* |
+169. Majority Element| Complexity Type  | Value    |  Optimal
+| ---------------- | -------- |
+| Time Complexity  | *O(n)* |
+| Space Complexity | *O(n)* |
+67 | Complexity Type  | Value    | Optimal
+| ---------------- | -------- |
+| Time Complexity  | *O(n)* |
+| Space Complexity | *O(1)* |
+160. Intersection of Two Linked Lists Optimal
+| Aspect               | Value        | Explanation                                                               |
+| -------------------- | ------------ | ------------------------------------------------------------------------- |
+| *Time Complexity*  | *O(n + m)* | Each pointer (h1, h2) traverses both lists once → total steps = n + m |
+| *Space Complexity* | *O(1)*     | No extra memory used, only two pointers                                   |
+14. Longest Common Prefix  Optimal
+. | Aspect               | Value        | Explanation                                                                               |
+| -------------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| *Time Complexity*  | *O(n × m)* | 
+| *Space Complexity* | *O(m)*
