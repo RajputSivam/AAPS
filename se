@@ -40,8 +40,8 @@ Space Complexity:
 | Time Complexity  | *O(n)* ✅                  |
 | Space Complexity | *O(n)* (including result) |
 
-231. Power of Two   Optimal (Bit) | O(1)            | O(1)
-| Complexity Type  | Value        |  21. Merge Two Sorted Lists Optimal
+231. Power of Two   Optimal (Bit) | 
+| Complexity Type  | Value        |  
 | ---------------- | ------------ |
 | Time Complexity  | *O(n + m)* |
 | Space Complexity | *O(n + m)* |
@@ -51,7 +51,7 @@ Space Complexity:
 | Time Complexity  | *O(n)* |
 | Space Complexity | *O(n)* |
 
-67 | Complexity Type  | Value    | Optimal
+67 | Complexity Type  | Value    | Optimal  167. Two Sum II - Input Array Is Sorted
 | ---------------- | -------- |
 | Time Complexity  | *O(n)* |
 | Space Complexity | *O(1)* |
@@ -67,3 +67,5 @@ Space Complexity:
 | -------------------- | ------------ | ----------------------------------------------------------------------------------------- |
 | *Time Complexity*  | *O(n × m)* | 
 | *Space Complexity* | *O(m)*
+
+231. Power of Two   Optimal (Bit) | O(1)            | O(1)
