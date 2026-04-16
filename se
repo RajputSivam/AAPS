@@ -1,4 +1,4 @@
-84. Largest Rectangle in Histogram  Optimal (Stack) | O(n)            | O(n)
+84. Largest Rectangle in Histogram   ❌ Brute Force     | O(n³)           | O(1)   
 
 78. Subsets   Optimal     | Backtracking | O(n·2ⁿ) | O(n) recursion
 
