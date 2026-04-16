@@ -24,7 +24,7 @@ Space Complexity:
 
 347. Top K Frequent Elements    Your (Heap) | O(n log n)      | O(n)
 
-338. Counting Bits   Your (Brute) | O(n log n)      | O👎
+338. Counting Bits   Your (Brute) | O(n log n)      |  O(n) 
 
 303. Range Sum Query - Immutable  Optmal . Prefix Sum       | O(n)          | O(n)
 
