@@ -8,6 +8,7 @@ Example 1:
 Input: strs = ["flower","flow","flight"]
 Output: "fl"
 
+//Optimal Appraoch
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         String res=strs[0];
@@ -37,22 +38,7 @@ class Solution {
     }
 }
 
-Time Complexity (TC)
-n = number of strings (strs.length)
-m = length of the shortest string
-
-Outer Loop
-for(int i=1;i<strs.length;i++)
-Runs (n - 1) times → where n = number of strings
-
-Function cm(s1, s2)
-for(int i=0;i<n;i++)
-Compares characters one by one
-Runs up to min(length of s1, length of s2)
-Total:
-
-O(n * m)
-
-💾 Space Complexity (SC)
-Extra Space Used:
-StringBuilder sb → stores prefix → O(m)
+| Aspect               | Value        | Explanation                                                                               |
+| -------------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| **Time Complexity**  | **O(n × m)** | For each of the `n` strings, you compare up to `m` characters (length of shortest string) |
+| **Space Complexity** | **O(m)**     | Temporary `StringBuilder` is used to build prefix (max length `m`)                        |
