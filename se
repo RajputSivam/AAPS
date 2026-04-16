@@ -28,11 +28,7 @@ Space Complexity:
 
 303. Range Sum Query - Immutable  Optmal . Prefix Sum       | O(n)          | O(n)
 
-239. Sliding Window Maximum  
-| Type             | Value                       |
-| ---------------- | --------------------------- |
-| Time Complexity  | *O(n)* ✅                  |
-| Space Complexity | *O(n)* (including result) |
+
 
 239. Sliding Window Maximum   Optimal Appraoch
 | Type             | Value                       |
