@@ -38,6 +38,11 @@ public class Solution {
 
     }
 }
+| Aspect               | Value        | Explanation                                                               |
+| -------------------- | ------------ | ------------------------------------------------------------------------- |
+| **Time Complexity**  | **O(n + m)** | Each pointer (`h1`, `h2`) traverses both lists once → total steps = n + m |
+| **Space Complexity** | **O(1)**     | No extra memory used, only two pointers                                   |
+
 ⏱ Time Complexity
 
 Each pointer travels at most:
